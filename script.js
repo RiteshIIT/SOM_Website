@@ -1,10 +1,11 @@
 
+
 window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
+    const header = document.getElementById('header');
     if (window.scrollY > 100) {
-        navbar.style.top = '0';
+        header.style.top = '0';
     } else {
-        navbar.style.top = '-120px';
+        header.style.top = '-800px';
     }
 });
 
@@ -13,22 +14,26 @@ const searchBar = document.getElementById('searchBar');
 const searchContainer = document.querySelector('.search-container');
 
 searchIcon.addEventListener('click', function() {
+    searchIcon.style.display='none';
     searchContainer.classList.toggle('active');
     if (searchContainer.classList.contains('active')) {
         searchBar.focus();
     }
 });
 
+const menuIcon= document.getElementById('menuIcon');
+const cross=document.getElementById('cross');
+const menu=document.getElementById('menu');
 
-// menu settings----------------------------
+menuIcon.addEventListener('click',function() {
+  menuIcon.style.display='none';
+  cross.style.display='block';
+  menu.style.top='13.5vh'
+})
 
-var sidemeu=document.getElementById("navbar");
+cross.addEventListener('click',function(){
+  menuIcon.style.display='block';
+  cross.style.display='none';
+  menu.style.top='-800px'
+})
 
-function openmenu(){
-    sidemeu.style.right="0";
-}
-function closemenu(){
-    sidemeu.style.right="-200px";
-}
-
-// ---------------------------------------
